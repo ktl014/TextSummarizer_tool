@@ -319,8 +319,10 @@ class ServerModel:
         head_spaces = []
         tail_spaces = []
         sslength = []
+        templates = []
         for i, inp in enumerate(inputs):
             src = inp['src']
+            templates.append(inp["template"])
             if src.strip() == "":
                 head_spaces.append(src)
                 texts.append("")
@@ -348,6 +350,7 @@ class ServerModel:
             try:
                 scores, predictions = self.translator.translate(
                     src_data_iter=texts_to_translate,
+                    template_data_iter=templates,
                     batch_size=self.opt.batch_size)
             except RuntimeError as e:
                 raise ServerModelError("Runtime Error: %s" % str(e))

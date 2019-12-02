@@ -40,7 +40,7 @@ class TextDataset(DatasetBase):
     def __init__(self, fields, src_examples_iter, tgt_examples_iter,template_iter,
                  num_src_feats=0, num_tgt_feats=0,
                  src_seq_length=0, tgt_seq_length=0,
-                 dynamic_dict=True, use_filter_pred=True):
+                 dynamic_dict=False, use_filter_pred=True):
         self.data_type = 'text'
 
         # self.src_vocabs: mutated in dynamic_dict, used in
