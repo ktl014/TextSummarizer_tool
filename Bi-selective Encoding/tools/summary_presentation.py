@@ -5,6 +5,7 @@ response = google_images_download.googleimagesdownload()
 import sys
 from io import StringIO
 
+SUMMARY_DEFAULT_IMG = "https://virtuallytiedtomydesktop.files.wordpress.com/2019/09/summary-stamp-summary-grunge-vintage-stamp-isolated-white-background-summary-sign-153529381.jpg"
 
 class RedirectedStdout:
     def __init__(self):
@@ -61,4 +62,4 @@ def downloadimages(query):
                 urls = [':'.join(i.split(':')[1:]) for i in raw_urls.split('\n') if i.split(':')[0] == 'Image URL']
                 return urls[-1]
         except:
-            return "URL NOT AVAILABLE."
+            return SUMMARY_DEFAULT_IMG
