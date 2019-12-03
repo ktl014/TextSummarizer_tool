@@ -3,6 +3,7 @@ import argparse
 
 from flask import Flask, jsonify, request
 from onmt.translate import TranslationServer, ServerModelError
+from tools.summary_presentation import downloadimages
 
 STATUS_OK = "ok"
 STATUS_ERROR = "error"
@@ -74,9 +75,10 @@ def start(config_file,
             assert len(scores) == len(inputs)
 
             out = [[{"src": inputs[i]['src'], "tgt": translation[i],
-                     "n_best": n_best,
+                     "n_best": n_best, "urls": downloadimages(translation[i]),
                      "pred_score": scores[i]}
                     for i in range(len(translation))]]
+
         except ServerModelError as e:
             out['error'] = str(e)
             out['status'] = STATUS_ERROR
