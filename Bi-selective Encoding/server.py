@@ -73,7 +73,6 @@ def start(config_file,
             translation, scores, n_best, times = translation_server.run(inputs)
             assert len(translation) == len(inputs)
             assert len(scores) == len(inputs)
-
             out = [[{"src": inputs[i]['src'], "tgt": translation[i],
                      "n_best": n_best, "urls": downloadimages(translation[i]),
                      "pred_score": scores[i]}

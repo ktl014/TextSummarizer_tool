@@ -43,7 +43,7 @@ def downloadimages(query):
             path_aggs = response.download(arguments)
             raw_urls = str(out)
             urls = [':'.join(i.split(':')[1:]) for i in raw_urls.split('\n') if i.split(':')[0] == 'Image URL']
-            return urls[-1]
+            return urls
         # Handling File NotFound Error
     except:
         arguments = {"keywords": query,
@@ -60,6 +60,7 @@ def downloadimages(query):
                 path_aggs = response.download(arguments)
                 raw_urls = str(out)
                 urls = [':'.join(i.split(':')[1:]) for i in raw_urls.split('\n') if i.split(':')[0] == 'Image URL']
-                return urls[-1]
+                return urls
         except:
-            return SUMMARY_DEFAULT_IMG
+            print("Hahah")
+            return [SUMMARY_DEFAULT_IMG]
