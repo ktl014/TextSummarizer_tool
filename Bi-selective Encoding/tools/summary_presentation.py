@@ -44,7 +44,7 @@ def downloadimages(query):
             urls = [':'.join(i.split(':')[1:]) for i in raw_urls.split('\n') if i.split(':')[0] == 'Image URL']
             return urls[-1]
         # Handling File NotFound Error
-    except FileNotFoundError:
+    except:
         arguments = {"keywords": query,
                      "format": "jpg",
                      "limit": 4,
@@ -61,4 +61,4 @@ def downloadimages(query):
                 urls = [':'.join(i.split(':')[1:]) for i in raw_urls.split('\n') if i.split(':')[0] == 'Image URL']
                 return urls[-1]
         except:
-            pass
+            return "URL NOT AVAILABLE."
