@@ -342,7 +342,8 @@ class ServerModel:
                 tail_spaces.append(whitespaces_after)
 
         empty_indices = [i for i, x in enumerate(texts) if x == ""]
-        texts_to_translate = [x for x in texts if x != ""]
+        texts_to_translate = [x.lower().strip() for x in texts if x != ""]
+        templates = [x.lower().strip() for x in templates if x != ""]
 
         scores = []
         predictions = []
