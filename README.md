@@ -4,7 +4,7 @@ The code here is for training, validating, and deploying the Creative Writer Ins
 ## What's the Creative Writer Insight tool?
 Our Creative Writer Insight tool is a text summarization web application for news articles. The tool is intended to provide the writer insight on a reader's perspective of their written articles by generating an abstractive summary and retrieving related Google images, based off the summary.
 
-![CreativeWriterInsight](https://drive.google.com/file/d/1ua30nAP_Eot2dmJSFkgddmAM3Z7vGfF-/view?usp=sharing)
+![CreativeWriterInsight](https://drive.google.com/uc?export=view&id=1ua30nAP_Eot2dmJSFkgddmAM3Z7vGfF-)
 
 ### Bi-selective Encoding
 The Bi-selective Encoding module is integrated with [OpenNMT](https://github.com/OpenNMT/OpenNMT-py). You can directly train it end to end with the [data](https://drive.google.com/file/d/1WtaDnpufPyqf8afFyfC13U_h56ars6CY/view?usp=sharing) by following steps:
